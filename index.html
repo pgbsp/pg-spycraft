@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prairie Grove Spycraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Prairie Grove Spycraft</h1>
+            <p class="subtitle">Intelligence and Communication Before the Battle of Prairie Grove</p>
+        </header>
+
+        <section class="history-note">
+            <h2>The Situation</h2>
+            <p>Early December 1862. Confederate General Thomas Hindman is gathering troops in northwest Arkansas. Union commanders James Blunt and Francis Herron are struggling to determine Confederate intentions before the armies meet near Prairie Grove.</p>
+            <p>Intelligence gathering, intercepted messages, scouts, couriers, and civilian reports could influence the decisions made before the battle.</p>
+        </section>
+
+        <section id="factionSelect">
+            <h2>Choose Your Role</h2>
+            <p>Explore one of two intelligence activities inspired by events leading to the Battle of Prairie Grove.</p>
+            <button type="button" onclick="selectFaction('union')">Union Scout</button>
+            <button type="button" onclick="selectFaction('confederate')">Confederate Intelligence Officer</button>
+        </section>
+
+        <section id="activityPanel" class="hidden">
+            <div id="storyPanel"></div>
+
+            <div id="unionActivity" class="hidden">
+                <h2>Prepare a Dispatch</h2>
+                <div class="source-box">
+                    <h3>Reports from Scouts</h3>
+                    <ul>
+                        <li>Confederate troops observed south of Cane Hill.</li>
+                        <li>Supply wagons moving north.</li>
+                        <li>Cavalry patrol activity increasing.</li>
+                    </ul>
+                </div>
+                <div class="prompt-box">
+                    <h3>Dispatch Form</h3>
+                    <p>Complete the report below and send it to General James Blunt.</p>
+                </div>
+                <textarea id="dispatchText" aria-label="Dispatch report" placeholder="General Blunt,
+
+Scouts report Confederate forces near ____________.
+
+We observed _______________________________.
+
+I recommend _______________________________.
+
+Respectfully,
+
+________________"></textarea>
+                <button type="button" onclick="submitDispatch()">Send Dispatch</button>
+                <div id="dispatchResult" aria-live="polite"></div>
+            </div>
+
+            <div id="confederateActivity" class="hidden">
+                <h2>Intercepted Union Message</h2>
+                <p>Confederate cavalry has captured a Union courier near Cane Hill.</p>
+                <p>The dispatch was encoded using a very simple letter shift.</p>
+                <div class="cipher-box" id="cipherText"></div>
+                <div class="source-box">
+                    <h3>Helpful Clues</h3>
+                    <ul>
+                        <li>K becomes H</li>
+                        <li>L becomes I</li>
+                        <li>Q becomes N</li>
+                        <li>The first word is HINDMAN</li>
+                        <li>The message mentions CANE HILL</li>
+                    </ul>
+                </div>
+                <p>What does the intercepted message say?</p>
+                <div id="cipherChoices"></div>
+                <div id="cipherResult" aria-live="polite"></div>
+            </div>
+
+            <button type="button" id="restartButton" class="hidden" onclick="location.reload()">Explore Another Role</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
