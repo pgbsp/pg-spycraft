@@ -1,0 +1,200 @@
+:root{
+
+    --parchment:#f7f1e3;
+    --prairie-tan:#d7c3a2;
+    --earth-brown:#6b4f3a;
+    --sage:#6f7d5d;
+    --historic-red:#8a3b2f;
+    --border:#c9b99c;
+    --text:#2d2a26;
+
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    padding:24px;
+
+    background:var(--prairie-tan);
+
+    color:var(--text);
+
+    font-family:'Source Sans 3', sans-serif;
+
+    line-height:1.7;
+
+}
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:var(--parchment);
+
+    border:2px solid var(--border);
+
+    padding:2rem;
+
+}
+
+h1,h2,h3{
+
+    font-family:'Libre Baskerville', serif;
+
+    color:var(--earth-brown);
+
+    line-height:1.3;
+
+}
+
+h1{
+
+    text-align:center;
+    margin-bottom:.5rem;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    margin-bottom:2rem;
+
+    color:#5c5347;
+
+}
+
+.history-note{
+
+    border-left:6px solid var(--historic-red);
+
+    padding-left:1rem;
+
+    margin-bottom:2rem;
+
+}
+
+.source-box,
+.prompt-box{
+
+    background:#efe7d4;
+
+    border:1px solid var(--border);
+
+    padding:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:1rem;
+
+    margin-bottom:1rem;
+
+    border:none;
+
+    background:var(--sage);
+
+    color:white;
+
+    font-family:'Source Sans 3', sans-serif;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#59664c;
+
+}
+
+textarea{
+
+    width:100%;
+
+    min-height:220px;
+
+    padding:1rem;
+
+    font-family:'Source Sans 3', sans-serif;
+
+    font-size:1rem;
+
+    margin-bottom:1rem;
+
+    border:1px solid var(--border);
+
+    resize:vertical;
+
+}
+
+.cipher-box{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    padding:1.5rem;
+
+    text-align:center;
+
+    font-family:'Libre Baskerville', serif;
+
+    font-size:1.4rem;
+
+    letter-spacing:4px;
+
+    margin-bottom:1.5rem;
+
+}
+
+.result{
+
+    margin-top:1rem;
+
+    background:#efe7d4;
+
+    border-left:5px solid var(--sage);
+
+    padding:1rem;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+#storyPanel{
+
+    margin-bottom:2rem;
+
+}
+
+@media(max-width:700px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        padding:1rem;
+    }
+
+}
