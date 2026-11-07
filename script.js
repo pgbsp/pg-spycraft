@@ -1,12 +1,12 @@
 const messages = [
 {
-    ciphertext: "KLQGPDQ QHDU FDQH KLOO",
-    answer: "HINDMAN NEAR CANE HILL",
+    ciphertext: "KHUURQ LV QHDU IDBHWWHYLOOH",
+    answer: "HERRON IS NEAR FAYETTEVILLE",
 
     choices: [
-        "HINDMAN NEAR CANE HILL",
-        "HINDMAN LEFT VAN BUREN",
-        "HINDMAN MOVING EAST"
+        "HERRON IS NEAR FAYETTEVILLE",
+        "HERRON LEFT VAN BUREN",
+        "HERRON MOVING EAST"
     ]
 }
 ];
@@ -120,7 +120,7 @@ function submitConfederateReport(){
 
     let score = 0;
 
-    if(report.includes("cane hill")) score++;
+    if(report.includes("fayetteville")) score++;
     if(report.includes("union")) score++;
     if(report.includes("wagon")) score++;
     if(report.includes("cavalry")) score++;
@@ -135,9 +135,9 @@ function submitConfederateReport(){
         <h3>Your Report Reaches Hindman's Headquarters</h3>
 
         <p>
-        The report clearly identifies Union activity
-        near Cane Hill and summarizes important
-        observations from the field.
+       The report clearly identifies the approach of
+       General Francis Herron's division and provides
+       valuable intelligence about Union movements.
         </p>
 
         <p>
@@ -205,9 +205,9 @@ function checkUnionAnswer(choice){
 
         <h3>Correct Interpretation</h3>
 
-        <p>
+       <p>
         The message reads:
-        <strong>HINDMAN NEAR CANE HILL</strong>
+        <strong>HERRON IS NEAR FAYETTEVILLE</strong>
         </p>
 
         <p>
@@ -240,8 +240,8 @@ function checkUnionAnswer(choice){
         </p>
 
         <ul>
-            <li>The first word is HINDMAN</li>
-            <li>The final words are CANE HILL</li>
+            <li>The first word is HERRON</li>
+            <li>The final words are FAYETTEVILLE</li>
             <li>K becomes H, so letters are moving back three places</li>
         </ul>
 
