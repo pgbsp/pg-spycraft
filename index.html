@@ -25,47 +25,19 @@
         <section id="factionSelect">
             <h2>Choose Your Role</h2>
             <p>Explore one of two intelligence activities inspired by events leading to the Battle of Prairie Grove.</p>
-            <button type="button" onclick="selectFaction('union')">Union Scout</button>
-            <button type="button" onclick="selectFaction('confederate')">Confederate Intelligence Officer</button>
+            <button type="button" onclick="selectFaction('union')">Union Signal Officer</button>
+            <button type="button" onclick="selectFaction('confederate')">Confederate Scout</button>
         </section>
 
         <section id="activityPanel" class="hidden">
             <div id="storyPanel"></div>
 
             <div id="unionActivity" class="hidden">
-                <h2>Prepare a Dispatch</h2>
-                <div class="source-box">
-                    <h3>Reports from Scouts</h3>
-                    <ul>
-                        <li>Confederate troops observed south of Cane Hill.</li>
-                        <li>Supply wagons moving north.</li>
-                        <li>Cavalry patrol activity increasing.</li>
-                    </ul>
-                </div>
-                <div class="prompt-box">
-                    <h3>Dispatch Form</h3>
-                    <p>Complete the report below and send it to General James Blunt.</p>
-                </div>
-                <textarea id="dispatchText" aria-label="Dispatch report" placeholder="General Blunt,
+                <h2>Intercepted Confederate Message</h2>
+                <p>Union scouts have captured a Confederate courier near Cane Hill.</p>
+                <p>The dispatch was encoded using a simple letter shift.</p>
+                <div class="cipher-box" id="unionCipherText"></div>
 
-Scouts report Confederate forces near ____________.
-
-We observed _______________________________.
-
-I recommend _______________________________.
-
-Respectfully,
-
-________________"></textarea>
-                <button type="button" onclick="submitDispatch()">Send Dispatch</button>
-                <div id="dispatchResult" aria-live="polite"></div>
-            </div>
-
-            <div id="confederateActivity" class="hidden">
-                <h2>Intercepted Union Message</h2>
-                <p>Confederate cavalry has captured a Union courier near Cane Hill.</p>
-                <p>The dispatch was encoded using a very simple letter shift.</p>
-                <div class="cipher-box" id="cipherText"></div>
                 <div class="source-box">
                     <h3>Helpful Clues</h3>
                     <ul>
@@ -76,17 +48,48 @@ ________________"></textarea>
                         <li>The message mentions CANE HILL</li>
                     </ul>
                 </div>
+
                 <p>What does the intercepted message say?</p>
-                <div id="cipherChoices"></div>
-                <div id="cipherResult" aria-live="polite"></div>
+                <div id="unionCipherChoices"></div>
+                <div id="unionCipherResult" aria-live="polite"></div>
+            </div>
+
+            <div id="confederateActivity" class="hidden">
+                <h2>Prepare a Report for General Hindman</h2>
+
+                <div class="source-box">
+                    <h3>Reports from Scouts</h3>
+                    <ul>
+                        <li>Union forces observed near Cane Hill.</li>
+                        <li>Supply wagons moving south.</li>
+                        <li>Union cavalry patrol activity increasing.</li>
+                    </ul>
+                </div>
+
+                <div class="prompt-box">
+                    <h3>Report Form</h3>
+                    <p>Complete the report below and send it to General Thomas Hindman.</p>
+                </div>
+
+                <textarea id="confederateReport" aria-label="Report to Hindman" placeholder="General Hindman,
+
+Scouts report Union forces near ____________.
+
+We observed _______________________________.
+
+I recommend _______________________________.
+
+Respectfully,
+
+________________"></textarea>
+
+                <button type="button" onclick="submitConfederateReport()">Send Report</button>
+                <div id="confederateResult" aria-live="polite"></div>
             </div>
 
             <button type="button" id="restartButton" class="hidden" onclick="location.reload()">Explore Another Role</button>
+            <p><a href="https://pgbsp.github.io/follow-a-soldier/">Back to Story</a></p>
         </section>
-
-        <button type="button" onclick="window.location.href='https://pgbsp.github.io/follow-a-soldier/'">
-            Back to Story
-        </button>
     </main>
     <script src="script.js"></script>
 </body>
