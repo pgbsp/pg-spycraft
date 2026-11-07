@@ -47,7 +47,7 @@ function loadUnion(){
         <h2>December 5, 1862</h2>
 
         <p>
-        You serve with General James Blunt's Union army.
+        You serve with the Union army.
         Scouts have intercepted a Confederate courier
         carrying an encoded message.
         </p>
@@ -99,7 +99,7 @@ function loadConfederate(){
         <p>
         You serve as a scout for General Thomas Hindman.
         Intelligence reports suggest Union forces are
-        active near Cane Hill.
+        active near Fayetteville.
         </p>
 
         <p>
