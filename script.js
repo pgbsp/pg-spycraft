@@ -1,18 +1,14 @@
 const messages = [
-
 {
     ciphertext: "KLQGPDQ QHDU FDQH KLOO",
     answer: "HINDMAN NEAR CANE HILL",
 
     choices: [
-
         "HINDMAN NEAR CANE HILL",
         "HINDMAN LEFT VAN BUREN",
         "HINDMAN MOVING EAST"
-
     ]
 }
-
 ];
 
 let currentMessage = null;
@@ -48,22 +44,44 @@ function loadUnion(){
     document
         .getElementById("storyPanel")
         .innerHTML = `
-
         <h2>December 5, 1862</h2>
 
         <p>
-        You serve as a scout attached to General James
-        Blunt's command. Reports suggest Confederate
-        troops are gathering near Cane Hill.
+        You serve with General James Blunt's Union army.
+        Scouts have intercepted a Confederate courier
+        carrying an encoded message.
         </p>
 
         <p>
-        Headquarters needs a concise report describing
-        what has been observed and how Union forces
-        should respond.
+        Use the clues provided to determine what the
+        Confederate command is reporting.
         </p>
-
         `;
+
+    currentMessage = messages[0];
+
+    document
+        .getElementById("unionCipherText")
+        .textContent = currentMessage.ciphertext;
+
+    const choicesBox =
+        document.getElementById("unionCipherChoices");
+
+    choicesBox.textContent = "";
+
+    currentMessage.choices.forEach(choice => {
+
+        const button =
+            document.createElement("button");
+
+        button.textContent = choice;
+
+        button.onclick = () =>
+            checkUnionAnswer(choice);
+
+        choicesBox.appendChild(button);
+
+    });
 
 }
 
@@ -76,61 +94,34 @@ function loadConfederate(){
     document
         .getElementById("storyPanel")
         .innerHTML = `
-
         <h2>December 5, 1862</h2>
 
         <p>
-        You serve with General Thomas Hindman's army.
-        Confederate cavalry has captured a Union courier
-        carrying an encoded dispatch.
+        You serve as a scout for General Thomas Hindman.
+        Intelligence reports suggest Union forces are
+        active near Cane Hill.
         </p>
 
         <p>
-        Using the clues provided, determine the message.
+        Headquarters needs a clear report describing
+        Union movements and possible responses.
         </p>
-
         `;
-
-    currentMessage = messages[0];
-
-    document
-        .getElementById("cipherText")
-        .textContent =
-        currentMessage.ciphertext;
-
-    const choicesBox =
-        document.getElementById("cipherChoices");
-
-    choicesBox.textContent = "";
-
-    currentMessage.choices.forEach(choice => {
-
-        const button =
-            document.createElement("button");
-
-        button.textContent = choice;
-
-        button.onclick = () =>
-            checkAnswer(choice);
-
-        choicesBox.appendChild(button);
-
-    });
 
 }
 
-function submitDispatch(){
+function submitConfederateReport(){
 
     const report =
         document
-        .getElementById("dispatchText")
+        .getElementById("confederateReport")
         .value
         .toLowerCase();
 
     let score = 0;
 
     if(report.includes("cane hill")) score++;
-    if(report.includes("confederate")) score++;
+    if(report.includes("union")) score++;
     if(report.includes("wagon")) score++;
     if(report.includes("cavalry")) score++;
 
@@ -141,12 +132,12 @@ function submitDispatch(){
         response = `
         <div class="result">
 
-        <h3>Your Dispatch Reaches Headquarters</h3>
+        <h3>Your Report Reaches Hindman's Headquarters</h3>
 
         <p>
-        The report clearly identifies Confederate
-        activity near Cane Hill and summarizes
-        important observations from the field.
+        The report clearly identifies Union activity
+        near Cane Hill and summarizes important
+        observations from the field.
         </p>
 
         <p>
@@ -165,13 +156,13 @@ function submitDispatch(){
 
         </div>
         `;
-    }
-    else{
+
+    } else {
 
         response = `
         <div class="result">
 
-        <h3>Your Dispatch Reaches Headquarters</h3>
+        <h3>Your Report Reaches Hindman's Headquarters</h3>
 
         <p>
         The report contains limited information.
@@ -190,10 +181,11 @@ function submitDispatch(){
 
         </div>
         `;
+
     }
 
     document
-        .getElementById("dispatchResult")
+        .getElementById("confederateResult")
         .innerHTML = response;
 
     document
@@ -202,7 +194,7 @@ function submitDispatch(){
 
 }
 
-function checkAnswer(choice){
+function checkUnionAnswer(choice){
 
     let result = "";
 
@@ -235,8 +227,8 @@ function checkAnswer(choice){
 
         </div>
         `;
-    }
-    else{
+
+    } else {
 
         result = `
         <div class="result">
@@ -261,14 +253,15 @@ function checkAnswer(choice){
         `;
 
         document
-            .getElementById("cipherResult")
+            .getElementById("unionCipherResult")
             .innerHTML = result;
 
         return;
+
     }
 
     document
-        .getElementById("cipherResult")
+        .getElementById("unionCipherResult")
         .innerHTML = result;
 
     document
