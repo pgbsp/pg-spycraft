@@ -12,19 +12,19 @@
 <body>
     <main class="container">
         <header>
-            <h1>Prairie Grove Spycraft</h1>
+            <h1>Spycraft</h1>
             <p class="subtitle">Intelligence and Communication Before the Battle of Prairie Grove</p>
         </header>
 
         <section class="history-note">
             <h2>The Situation</h2>
-            <p>Early December 1862. Confederate General Thomas Hindman is gathering troops in northwest Arkansas. Union commanders James Blunt and Francis Herron are struggling to determine Confederate intentions before the armies meet near Prairie Grove.</p>
-            <p>Intelligence gathering, intercepted messages, scouts, couriers, and civilian reports could influence the decisions made before the battle.</p>
+            <p>The Confederate Army is south of Cane Hill, but heading north quickly. General Blunt's division is near Cane Hill, badly outnumbered by Confederate forces.  General Herron's Army has slipped into Fayetteville overnight, and are marching to Blunt's relief.</p>
+            <p>Intelligence gathering, intercepted messages, scouts, couriers, and civilian reports played extremely important roles in the outcomes of battles.</p>
         </section>
 
         <section id="factionSelect">
             <h2>Choose Your Role</h2>
-            <p>Explore one of two intelligence activities inspired by events leading to the Battle of Prairie Grove.</p>
+            <p>Are you Union or Confederate?</p>
             <button type="button" onclick="selectFaction('union')">Union Signal Officer</button>
             <button type="button" onclick="selectFaction('confederate')">Confederate Scout</button>
         </section>
@@ -34,7 +34,7 @@
 
             <div id="unionActivity" class="hidden">
                 <h2>Intercepted Confederate Message</h2>
-                <p>Union scouts have captured a Confederate courier near Cane Hill.</p>
+                <p>Union scouts have captured a Confederate courier near Morrow.</p>
                 <p>The dispatch was encoded using a simple letter shift.</p>
                 <div class="cipher-box" id="unionCipherText"></div>
 
@@ -44,8 +44,7 @@
                         <li>K becomes H</li>
                         <li>L becomes I</li>
                         <li>Q becomes N</li>
-                        <li>The first word is HINDMAN</li>
-                        <li>The message mentions CANE HILL</li>
+                        <li>The first word is HERRON</li>
                     </ul>
                 </div>
 
@@ -60,7 +59,7 @@
                 <div class="source-box">
                     <h3>Reports from Scouts</h3>
                     <ul>
-                        <li>Union forces observed near Cane Hill.</li>
+                        <li>Union forces observed near Fayetteville.</li>
                         <li>Supply wagons moving south.</li>
                         <li>Union cavalry patrol activity increasing.</li>
                     </ul>
