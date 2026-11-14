@@ -18,7 +18,7 @@
 
         <section class="history-note">
             <h2>The Situation</h2>
-            <p>The Confederate Army is south of Cane Hill, but heading north quickly. General Blunt's division is near Cane Hill, badly outnumbered by Confederate forces.  General Herron's Army has slipped into Fayetteville overnight, and are marching to Blunt's relief.</p>
+            <p>The Confederate Army is south of Cane Hill, but heading north quickly. General Blunt's division is near Cane Hill, badly outnumbered by Confederate forces. General Herron's Army has slipped into Fayetteville overnight, and is marching to Blunt's relief.</p>
             <p>Intelligence gathering, intercepted messages, scouts, couriers, and civilian reports played extremely important roles in the outcomes of battles.</p>
         </section>
 
@@ -29,7 +29,7 @@
             <button type="button" onclick="selectFaction('confederate')">Confederate Scout</button>
         </section>
 
-        <section id="activityPanel" class="hidden">
+        <section id="activityPanel" class="hidden" aria-live="polite">
             <div id="storyPanel"></div>
 
             <div id="unionActivity" class="hidden">
@@ -41,13 +41,10 @@
                 <div class="source-box">
                     <h3>Helpful Clues</h3>
                     <ul>
-                       
-        <li>
-        K becomes H</li>
-        <li>H remains E after shifting back three places</li>
-        <li>U becomes R</li>
-
-            <li>The first word is HERRON</li>
+                        <li>K becomes H</li>
+                        <li>H becomes E after shifting back three places</li>
+                        <li>U becomes R</li>
+                        <li>The first word is HERRON</li>
                     </ul>
                 </div>
 
@@ -73,26 +70,18 @@
                     <p>Complete the report below and send it to General Thomas Hindman.</p>
                 </div>
 
-                <textarea id="confederateReport" aria-label="Report to Hindman" placeholder="General Hindman,
-
-Scouts report Union forces near ____________.
-
-We observed _______________________________.
-
-I recommend _______________________________.
-
-Respectfully,
-
-________________"></textarea>
+                <textarea id="confederateReport" aria-label="Report to Hindman" placeholder="General Hindman,&#10;&#10;Scouts report Union forces near ____________.&#10;&#10;We observed _______________________________.&#10;&#10;I recommend _______________________________.&#10;&#10;Respectfully,&#10;&#10;________________"></textarea>
 
                 <button type="button" onclick="submitConfederateReport()">Send Report</button>
                 <div id="confederateResult" aria-live="polite"></div>
             </div>
 
             <button type="button" id="restartButton" class="hidden" onclick="location.reload()">Explore Another Role</button>
-            <p><a href="https://pgbsp.github.io/follow-a-soldier/">Back to Story</a></p>
         </section>
+
+        <a class="back-link" href="https://pgbsp.github.io/follow-a-soldier/">Back to Story</a>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
+
